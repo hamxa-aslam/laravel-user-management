@@ -1,0 +1,220 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==============================
+   ANIMATION KEYFRAMES
+============================== */
+
+@keyframes softFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes softSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes softDropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes statsCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   SIDEBAR & NAVBAR
+============================== */
+
+.motion-sidebar {
+    animation: softSlideIn 0.55s ease-out both;
+}
+
+.motion-navbar {
+    animation: softDropIn 0.45s ease-out both;
+}
+
+/* ==============================
+   PAGE ANIMATIONS
+============================== */
+
+.dashboard-enter {
+    animation: softFadeIn 0.65s ease-out both;
+}
+
+.motion-item {
+    animation: softFadeIn 0.65s ease-out both;
+}
+
+.motion-delay-1 {
+    animation-delay: 0.10s;
+}
+
+.motion-delay-2 {
+    animation-delay: 0.20s;
+}
+
+.motion-delay-3 {
+    animation-delay: 0.30s;
+}
+
+.motion-delay-4 {
+    animation-delay: 0.40s;
+}
+
+/* ==============================
+   STATISTICS CARDS
+============================== */
+
+.motion-card,
+.motion-card-1,
+.motion-card-2,
+.motion-card-3 {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.motion-card {
+    animation: softFadeIn 0.7s ease-out both;
+}
+
+.motion-card-1,
+.motion-card-2,
+.motion-card-3 {
+    animation: statsCardEnter 0.65s ease-out both;
+}
+
+.motion-card-1 {
+    animation-delay: 0.10s;
+}
+
+.motion-card-2 {
+    animation-delay: 0.25s;
+}
+
+.motion-card-3 {
+    animation-delay: 0.40s;
+}
+
+.motion-card:hover,
+.motion-card-1:hover,
+.motion-card-2:hover,
+.motion-card-3:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 18px 35px rgb(79 70 229 / 25%);
+}
+
+.motion-card:active,
+.motion-card-1:active,
+.motion-card-2:active,
+.motion-card-3:active {
+    transform: translateY(-2px) scale(0.99);
+}
+
+/* ==============================
+   SIDEBAR LINKS
+============================== */
+
+.motion-link {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.motion-link:hover {
+    transform: translateX(4px);
+}
+
+/* ==============================
+   BUTTON ANIMATIONS
+============================== */
+
+.motion-button {
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.motion-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.motion-button:active {
+    transform: scale(0.97);
+}
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .motion-sidebar,
+    .motion-navbar,
+    .dashboard-enter,
+    .motion-item,
+    .motion-card,
+    .motion-card-1,
+    .motion-card-2,
+    .motion-card-3 {
+        animation: none !important;
+    }
+
+    .motion-link,
+    .motion-card,
+    .motion-card-1,
+    .motion-card-2,
+    .motion-card-3,
+    .motion-button {
+        transition: none !important;
+    }
+
+    .motion-link:hover,
+    .motion-card:hover,
+    .motion-card-1:hover,
+    .motion-card-2:hover,
+    .motion-card-3:hover,
+    .motion-button:hover,
+    .motion-button:active {
+        transform: none !important;
+        filter: none !important;
+    }
+}
